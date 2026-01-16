@@ -28,7 +28,7 @@ function drawMatrix() {
     }
 }
 
-setInterval(drawMatrix, 33);
+setInterval(drawMatrix, 30);
 
 window.addEventListener('resize', () => {
     canvas.width = window.innerWidth;
