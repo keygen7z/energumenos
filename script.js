@@ -34,3 +34,38 @@ window.addEventListener('resize', () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 });
+
+// Control de música
+const music = document.getElementById('background-music');
+const musicToggle = document.getElementById('music-toggle');
+const musicIcon = document.getElementById('music-icon');
+let isPlaying = false;
+
+// Intentar reproducir automáticamente
+function tryAutoplay() {
+    music.volume = 0.3; // Volumen al 30%
+    music.play().then(() => {
+        isPlaying = true;
+        musicIcon.textContent = '🔊';
+    }).catch(() => {
+        // Si el navegador bloquea el autoplay, esperar interacción del usuario
+        isPlaying = false;
+        musicIcon.textContent = '🔇';
+    });
+}
+
+// Iniciar cuando se carga la página
+window.addEventListener('load', tryAutoplay);
+
+// Control manual de música
+musicToggle.addEventListener('click', () => {
+    if (isPlaying) {
+        music.pause();
+        musicIcon.textContent = '🔇';
+        isPlaying = false;
+    } else {
+        music.play();
+        musicIcon.textContent = '🔊';
+        isPlaying = true;
+    }
+});
