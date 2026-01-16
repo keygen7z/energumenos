@@ -168,15 +168,6 @@ footer {
     color: #0a0;
 }
 
-.scan-line {
-    position: fixed;
-    width: 100%;
-    height: 2px;
-    background: rgba(0, 255, 0, 0.5);
-    z-index: 999;
-    animation: scan 4s linear infinite;
-}
-
 @keyframes scan {
     from { top: 0 }
     to { top: 100% }
