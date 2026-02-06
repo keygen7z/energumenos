@@ -61,6 +61,12 @@ h1 {
     display: inline-block;
 }
 
+.seo-description {
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+}
+
 @keyframes typing {
     from { width: 0 }
     to { width: 100% }
